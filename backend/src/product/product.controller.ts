@@ -8,9 +8,9 @@ export class ProductController {
     constructor(private readonly productService: ProductService) {}
 
     @Post()
-    async create(@Body() { name, price, quantity }: CreateProductDTO) {
+    async create(@Body() { name, price, quantity, url_image }: CreateProductDTO) {
         console.log(typeof name, typeof price, typeof quantity);
-        return this.productService.create({ name, price, quantity })
+        return this.productService.create({ name, price, quantity, url_image })
     }
 
     @Get()

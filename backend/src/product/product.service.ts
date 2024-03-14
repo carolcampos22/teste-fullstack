@@ -7,13 +7,14 @@ import { UpdateProductDTO } from "./dto/update-product.dto";
 export class ProductService {
     constructor(private readonly prisma: PrismaService) {}
 
-    async create({name, price, quantity}: CreateProductDTO){
+    async create({name, price, quantity, url_image}: CreateProductDTO){
         
         return this.prisma.product.create({
             data: {
                 name,
                 price,
-                quantity
+                quantity,
+                url_image
             },
         })
     }
@@ -31,8 +32,26 @@ export class ProductService {
         })
     }
 
-    async update(id: number, data: UpdateProductDTO) {
+    async update(id: number, {name, price, quantity, url_image}: UpdateProductDTO) {
         await this.exists(id)
+
+        const data: any = {}
+
+        if(name){
+            data.name = name
+        }
+
+        if(price){
+            data.price = price
+        }
+
+        if(quantity){
+            data.quantity = quantity
+        }
+
+        if(url_image){
+            data.url_image = url_image
+        }
 
         return this.prisma.product.update({
             data,
