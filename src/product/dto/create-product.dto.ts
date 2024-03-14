@@ -4,11 +4,9 @@ export class CreateProductDTO {
     @IsString()
     name: string
 
-    //@IsNumber()
-    @IsString()
+    @IsNumber()
     price: number
 
-    //@IsNumber()
-    @IsString()
+    @IsNumber()
     quantity: number
 }
