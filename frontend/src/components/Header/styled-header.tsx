@@ -12,4 +12,8 @@ export const HeaderContainer = styled.div`
     font-size: 3rem;
     color: #fff;
     padding-left: 3vw;
+
+    @media (max-width: 670px){
+        font-size: 2rem;
+    }
 `

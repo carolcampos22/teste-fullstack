@@ -8,7 +8,7 @@ export class ProductService {
     constructor(private readonly prisma: PrismaService) {}
 
     async create({name, price, quantity, url_image}: CreateProductDTO){
-        
+        console.log(typeof price)
         return this.prisma.product.create({
             data: {
                 name,
@@ -52,7 +52,7 @@ export class ProductService {
         if(url_image){
             data.url_image = url_image
         }
-
+        console.log(typeof price)
         return this.prisma.product.update({
             data,
             where: {
@@ -77,3 +77,4 @@ export class ProductService {
         }
     }
 }
+

@@ -9,7 +9,9 @@ export class ProductController {
 
     @Post()
     async create(@Body() { name, price, quantity, url_image }: CreateProductDTO) {
-        console.log(typeof name, typeof price, typeof quantity);
+        if(typeof price === 'string') {
+            price = parseFloat(price)
+        }
         return this.productService.create({ name, price, quantity, url_image })
     }
 
@@ -25,6 +27,9 @@ export class ProductController {
 
     @Patch(':id')
     async update(@Body() data: UpdateProductDTO, @Param('id', ParseIntPipe) id: number) {
+        if (typeof data.price === 'string') {
+            data.price = parseFloat(data.price);
+        }
         return this.productService.update(id, data)
     }
 

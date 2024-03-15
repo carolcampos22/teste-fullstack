@@ -8,10 +8,10 @@ export const CardContainer = styled.div`
     background-color: black;
     color: white;
     width: 20vw;
-    height: 40vh;
+    height: 60vh;
     border-radius: 24px;
     margin: 1rem;
-    padding: 3rem 0 2rem 0;
+    padding: 3rem 1rem;
 
     img {
         width: 80%;
@@ -23,6 +23,14 @@ export const CardContainer = styled.div`
     span{
         font-weight: 500;
         font-size: 1.5rem;
+    }
+
+    @media (max-width: 1400px){
+        width: 30vw;
+    }
+
+    @media (max-width: 960px){
+        width: 60vw;
     }
 `
 
@@ -42,5 +50,9 @@ export const Buttons = styled.div`
         font-size: .9rem;
         font-weight: 700;
         cursor: pointer;
+
+        @media (max-width: 960px){
+        width: 11vw;
+    }
     }
 `
