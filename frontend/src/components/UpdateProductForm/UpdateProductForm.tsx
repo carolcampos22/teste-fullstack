@@ -5,7 +5,7 @@ import { UpdateProductFormContainer } from './styled-update-form';
 
 interface UpdateProductFormProps {
     product: Product;
-    onUpdate: (updatedProduct: Product) => void; // Update the type to accept the updated product
+    onUpdate: (updatedProduct: Product) => void; 
 }
 
 

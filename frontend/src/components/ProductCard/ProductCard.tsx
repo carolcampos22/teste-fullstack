@@ -40,7 +40,7 @@ export const ProductCard = ({ id, name, price, quantity, url_image, onDelete }: 
     return (
         <CardContainer>
             {isEditing ? (
-                <UpdateProductForm product={{ id, name, price, quantity, url_image }} onUpdate={handleUpdate} /> // Renderize o formulário de edição se isEditing for verdadeiro
+                <UpdateProductForm product={{ id, name, price, quantity, url_image }} onUpdate={handleUpdate} /> 
             ) : (
                 <>
                     <h2>{name}</h2>
